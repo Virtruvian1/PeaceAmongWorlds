@@ -1,13 +1,13 @@
 ﻿using System;
 
-namespace Project
+namespace PeaceAmongWorlds
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Planets Earth = new Planets();
-            Earth.Earth();
+            Draw Draw = new Draw();
+            Draw.DrawPlanets();
         }
     }
 }
