@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Project
 {
-    class Character
+    public class Character
     {
         public string name;
         public int age;
@@ -17,7 +17,7 @@ namespace Project
             this.money = money;
         }
 
-        Character Rick = new Character("Rick", 18, 50);
+        
 
 
 

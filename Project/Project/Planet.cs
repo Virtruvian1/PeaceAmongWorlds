@@ -12,11 +12,7 @@ namespace Project
 
 
 
-        public Planet()
-        {
-
-        }
-
+       
 
 
 

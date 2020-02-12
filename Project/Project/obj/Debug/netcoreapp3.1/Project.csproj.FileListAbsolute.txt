@@ -1,0 +1,11 @@
+D:\Documents\MSSA\C#\PeaceAmongWorlds\PeaceAmongWorlds-\Project\Project\bin\Debug\netcoreapp3.1\Project.exe
+D:\Documents\MSSA\C#\PeaceAmongWorlds\PeaceAmongWorlds-\Project\Project\bin\Debug\netcoreapp3.1\Project.deps.json
+D:\Documents\MSSA\C#\PeaceAmongWorlds\PeaceAmongWorlds-\Project\Project\bin\Debug\netcoreapp3.1\Project.runtimeconfig.json
+D:\Documents\MSSA\C#\PeaceAmongWorlds\PeaceAmongWorlds-\Project\Project\bin\Debug\netcoreapp3.1\Project.runtimeconfig.dev.json
+D:\Documents\MSSA\C#\PeaceAmongWorlds\PeaceAmongWorlds-\Project\Project\bin\Debug\netcoreapp3.1\Project.dll
+D:\Documents\MSSA\C#\PeaceAmongWorlds\PeaceAmongWorlds-\Project\Project\bin\Debug\netcoreapp3.1\Project.pdb
+D:\Documents\MSSA\C#\PeaceAmongWorlds\PeaceAmongWorlds-\Project\Project\obj\Debug\netcoreapp3.1\Project.csprojAssemblyReference.cache
+D:\Documents\MSSA\C#\PeaceAmongWorlds\PeaceAmongWorlds-\Project\Project\obj\Debug\netcoreapp3.1\Project.AssemblyInfoInputs.cache
+D:\Documents\MSSA\C#\PeaceAmongWorlds\PeaceAmongWorlds-\Project\Project\obj\Debug\netcoreapp3.1\Project.AssemblyInfo.cs
+D:\Documents\MSSA\C#\PeaceAmongWorlds\PeaceAmongWorlds-\Project\Project\obj\Debug\netcoreapp3.1\Project.dll
+D:\Documents\MSSA\C#\PeaceAmongWorlds\PeaceAmongWorlds-\Project\Project\obj\Debug\netcoreapp3.1\Project.pdb
