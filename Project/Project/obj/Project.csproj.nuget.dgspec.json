@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documents\\MSSA\\C#\\PeaceAmongWorlds\\PeaceAmongWorlds-\\Project\\Project\\Project.csproj": {}
+    "C:\\Users\\wwstudent\\Source\\Repos\\PeaceAmongWorlds-2\\Project\\Project\\Project.csproj": {}
   },
   "projects": {
-    "D:\\Documents\\MSSA\\C#\\PeaceAmongWorlds\\PeaceAmongWorlds-\\Project\\Project\\Project.csproj": {
+    "C:\\Users\\wwstudent\\Source\\Repos\\PeaceAmongWorlds-2\\Project\\Project\\Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documents\\MSSA\\C#\\PeaceAmongWorlds\\PeaceAmongWorlds-\\Project\\Project\\Project.csproj",
+        "projectUniqueName": "C:\\Users\\wwstudent\\Source\\Repos\\PeaceAmongWorlds-2\\Project\\Project\\Project.csproj",
         "projectName": "Project",
-        "projectPath": "D:\\Documents\\MSSA\\C#\\PeaceAmongWorlds\\PeaceAmongWorlds-\\Project\\Project\\Project.csproj",
-        "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
-        "outputPath": "D:\\Documents\\MSSA\\C#\\PeaceAmongWorlds\\PeaceAmongWorlds-\\Project\\Project\\obj\\",
+        "projectPath": "C:\\Users\\wwstudent\\Source\\Repos\\PeaceAmongWorlds-2\\Project\\Project\\Project.csproj",
+        "packagesPath": "C:\\Users\\wwstudent\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\wwstudent\\Source\\Repos\\PeaceAmongWorlds-2\\Project\\Project\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\jonat\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\wwstudent\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -56,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

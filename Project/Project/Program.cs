@@ -6,7 +6,8 @@ namespace Project
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Planets Earth = new Planets();
+            Earth.Earth();
         }
     }
 }
