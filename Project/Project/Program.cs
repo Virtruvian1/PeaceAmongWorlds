@@ -6,8 +6,14 @@ namespace PeaceAmongWorlds
     {
         static void Main(string[] args)
         {
-            Draw Draw = new Draw();
-            Draw.DrawPlanets();
+            bool runGame = true;
+            do
+            {
+                Draw Draw = new Draw();
+                Draw.DrawPlanets();
+                Draw.DrawStatusBar();
+                Console.Read();
+            } while (!runGame);
         }
     }
 }

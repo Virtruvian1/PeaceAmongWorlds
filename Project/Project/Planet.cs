@@ -1,66 +1,31 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
 namespace PeaceAmongWorlds
 {
+    // Version 1.0
     class Planets
     {
-        public Planets()
+        public string Name;
+        public int X1;
+        public int X2;
+        public int X3;
+        public int X4;
+        public int Y1;
+        public int Y2;
+
+
+        public Planets(string Name, int X1, int X2, int X3, int X4, int Y1, int Y2)
         {
+            this.Name = Name;
+            this.X1 = X1;
+            this.X2 = X2;
+            this.X3 = X3;
+            this.X4 = X4;
+            this.Y1 = Y1;
+            this.Y2 = Y2;
         }
-
-
-
-        public (int[], int[], int) Earth()
-        {
-            int ID = 1;
-            int[] xCoords = new int[] { 50, 51 };
-            int[] yCoords = new int[] { 24, 25 };
-            return (xCoords, yCoords, ID);
-        }
-
-        public (int[], int[], int) Hoth()
-        {
-            int ID = 2;
-            int[] xCoords = new int[] { 27, 28 };
-            int[] yCoords = new int[] { 9, 10 };
-            return (xCoords, yCoords, ID);
-        }
-
-        public (int[], int[], int) LV426()
-        {
-            int ID = 3;
-            int[] xCoords = new int[] { 15, 16 };
-            int[] yCoords = new int[] { 19, 20 };
-            return (xCoords, yCoords, ID);
-        }
-
-        public (int[], int[], int) Naboo()
-        {
-            int ID = 4;
-            int[] xCoords = new int[] { 25, 26 };
-            int[] yCoords = new int[] { 39, 40 };
-            return (xCoords, yCoords, ID);
-        }
-
-        public (int[], int[], int) Tatooine()
-        {
-            int ID = 5;
-            int[] xCoords = new int[] { 65, 66 };
-            int[] yCoords = new int[] { 37, 38 };
-            return (xCoords, yCoords, ID);
-        }
-
-        public (int[], int[], int) DeathStar()
-        {
-            int ID = 6;
-            int[] xCoords = new int[] { 90, 91, 92, 93 };
-            int[] yCoords = new int[] { 5, 6, 7, 8 };
-            return (xCoords, yCoords, ID);
-        }
-
-
-
     }
 }
