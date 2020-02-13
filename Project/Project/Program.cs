@@ -7,11 +7,13 @@ namespace PeaceAmongWorlds
         static void Main(string[] args)
         {
             bool runGame = true;
+            var Draw = new Draw();
+            var Movement = new Movement();
             do
             {
-                Draw Draw = new Draw();
                 Draw.DrawPlanets();
                 Draw.DrawStatusBar();
+                Movement.MovementHandle();
                 Console.Read();
             } while (!runGame);
         }

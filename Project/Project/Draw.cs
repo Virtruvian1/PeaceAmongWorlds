@@ -71,21 +71,29 @@ namespace PeaceAmongWorlds
 
 			void HealthBar()
 			{
-				int realCurrentHealth = 30; //Pull Variable from Ship Status
+				// Initilize variables
+				int realCurrentHealth = 65; // <- Pull Variable from Ship Status
 				int realTotalHealth = 100;
 				int statusCurrentHealth;
 				int statusTotalHealth = 20;
-				Console.SetCursorPosition(2, 1);
+				// Set Position
+				CursorTo(2, 1);
+				// Use proportion to calculate CurrentHealth for display
 				statusCurrentHealth = (statusTotalHealth * realCurrentHealth) / realTotalHealth;
+				// Expand string for display
 				string displayHealth = new string(' ', statusCurrentHealth);
+				// Displays Health status in Red
 				Console.BackgroundColor = ConsoleColor.Red;
 				Console.Write($"{displayHealth}");
+				// Caluclate Missing Health
 				int statusMissingHealth = statusTotalHealth - statusCurrentHealth;
 				string displayMissingHealth = new string(' ', statusMissingHealth);
+				// Fills Missing Health in Gray
 				Console.BackgroundColor = ConsoleColor.Gray;
 				Console.Write($"{displayMissingHealth}");
 				Console.ResetColor();
-				Console.SetCursorPosition(2, 0);
+				// Display Health in Text
+				CursorTo(2, 0);
 				Console.Write($"Health : {realCurrentHealth} / {realTotalHealth}");
 			}
 
@@ -93,43 +101,43 @@ namespace PeaceAmongWorlds
 			{
 				// Menu Divider
 				Console.ForegroundColor = ConsoleColor.Cyan;
-				Console.SetCursorPosition(30, 0);
+				CursorTo(30, 0);
 				Console.Write("|");
-				Console.SetCursorPosition(30, 1);
+				CursorTo(30, 1);
 				Console.Write("|");
-				Console.SetCursorPosition(30, 2);
+				CursorTo(30, 2);
 				Console.Write("|");
-				Console.SetCursorPosition(95, 0);
+				CursorTo(95, 0);
 				Console.Write("|");
-				Console.SetCursorPosition(95, 1);
+				CursorTo(95, 1);
 				Console.Write("|");
-				Console.SetCursorPosition(95, 2);
+				CursorTo(95, 2);
 				Console.Write("|");
 				Console.ResetColor();
 				// Control List Title
-				Console.SetCursorPosition(32, 0);
+				CursorTo(32, 0);
 				Console.Write("Controls: ");
 				// Control List
-				Console.SetCursorPosition(45, 0);
+				CursorTo(45, 0);
 				Console.Write("Arrow Keys: Move Target");
-				Console.SetCursorPosition(45, 1);
+				CursorTo(45, 1);
 				Console.Write("Enter : Action");
-				Console.SetCursorPosition(45, 2);
+				CursorTo(45, 2);
 				Console.Write("M : Menu");
-				Console.SetCursorPosition(75, 0);
+				CursorTo(75, 0);
 				Console.Write("Ctrl+C : Quit");
-				Console.SetCursorPosition(75, 1);
+				CursorTo(75, 1);
 				Console.Write("S : Save");
-				Console.SetCursorPosition(75, 2);
+				CursorTo(75, 2);
 				Console.Write("C : Credits");
 			}
 
 			void DisplayCurrentPostion()
 			{
-				Console.SetCursorPosition(97, 0);
+				CursorTo(97, 0);
 				Console.ForegroundColor = ConsoleColor.Green;
 				Console.Write("Current Postion ( X, Y )");
-				Console.SetCursorPosition(97, 1);
+				CursorTo(97, 1);
 				Console.ForegroundColor = ConsoleColor.DarkYellow;
 				Console.Write("Target Postion  ( X, Y )");
 				Console.ResetColor();
@@ -137,7 +145,7 @@ namespace PeaceAmongWorlds
 
 			void BottomOfMenu()
 			{
-				Console.SetCursorPosition(0, 3);
+				CursorTo(0, 3);
 				Console.ForegroundColor = ConsoleColor.Cyan;
 				string bar = new string('R', 140);
 				Console.Write($"{bar}" + "iicckk!!!!");
@@ -148,51 +156,62 @@ namespace PeaceAmongWorlds
 	
 		public void DrawPlanet(int X1, int X2, int X3, int X4, int Y1, int Y2, int ID)
 		{
-			Console.SetCursorPosition(X1, Y1);
+			// Coord 1 //////////
+			CursorTo(X1, Y1);
 			Color(ID);
-			Console.SetCursorPosition(X1, Y2);
+			ToConsole();
+			// Coord 2 //////////
+			CursorTo(X1, Y2);
 			Color(ID);
-			Console.SetCursorPosition(X2, Y1);
+			ToConsole();
+			// Coord 3 //////////
+			CursorTo(X2, Y1);
 			Color(ID);
-			Console.SetCursorPosition(X2, Y2);
+			ToConsole();
+			// Coord 4 //////////
+			CursorTo(X2, Y2);
 			Color(ID);
-			Console.SetCursorPosition(X3, Y1);
+			ToConsole();
+			// Coord 5 //////////
+			CursorTo(X3, Y1);
 			Color(ID);
-			Console.SetCursorPosition(X3, Y2);
+			ToConsole();
+			// Coord 6 //////////
+			CursorTo(X3, Y2);
 			Color(ID);
-			Console.SetCursorPosition(X4, Y1);
+			ToConsole();
+			// Coord 7 //////////
+			CursorTo(X4, Y1);
 			Color(ID);
-			Console.SetCursorPosition(X4, Y2);
+			ToConsole();
+			// Coord 8 //////////
+			CursorTo(X4, Y2);
 			Color(ID);
+			ToConsole();
 		}
 
 		public void Color(int ID)
 		{
+	
 			switch (ID)
 			{
 				case 1:
 					Console.BackgroundColor = ConsoleColor.Blue;
-					ToConsole();
 					break;
 				case 2:
 					Console.BackgroundColor = ConsoleColor.Green;
-					ToConsole();
 					break;
 				case 3:
 					Console.BackgroundColor = ConsoleColor.Magenta;
-					ToConsole();
 					break;
 				case 4:
 					Console.BackgroundColor = ConsoleColor.White;
-					ToConsole();
 					break;
 				case 5:
 					Console.BackgroundColor = ConsoleColor.DarkGreen;
-					ToConsole();
 					break;
 				case 6:
 					Console.BackgroundColor = ConsoleColor.DarkGray;
-					ToConsole();
 					break;
 				default:
 					break;
@@ -205,6 +224,13 @@ namespace PeaceAmongWorlds
 			Console.Write(" ");
 			Console.ResetColor();
 		}
+
+		public void CursorTo(int x, int y)
+		{
+			Console.SetCursorPosition(x, y);
+		}
+
+
 	}	
 }
 		
