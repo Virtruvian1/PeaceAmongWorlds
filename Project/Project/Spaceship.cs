@@ -6,10 +6,30 @@ namespace Project
 {
     public class Spaceship
     {
-        public int speed = 50;
-        public int health = 100;
-        public int damage = 10;
-        public int cargoSpace = 20; 
+        public string shipName;
+        public int speed;
+        public int health;
+        public int damage;
+        public int cargoSpace;
+
+
+        public Spaceship ()
+        {
+            this.shipName = "Alpha";
+            this.speed = 50;
+            this.health = 100;
+            this.damage = 10;
+            this.cargoSpace = 20;
+        }
+        public Spaceship(string shipName, int speed, int health, int damage, int cargoSpace)
+        {
+            this.shipName = shipName;
+            this.speed = speed;
+            this.health = health;
+            this.damage = damage;
+            this.cargoSpace = cargoSpace;
+                 
+        }
 
 
 
