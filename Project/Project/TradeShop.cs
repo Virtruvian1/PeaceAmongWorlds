@@ -36,7 +36,7 @@ namespace Project
             do
             {
 
-                Console.Write("             Welcome to the Earth Shop\n\n" +
+                Console.Write($"             Welcome to the Local Shop\n\n" +
                 "What would you like to do?:      1. Buy\n" +
                 "                                 2. Sell\n" +
                 "                                 3. Leave Shop\n");
@@ -220,9 +220,9 @@ namespace Project
                                     do
                                     {
                                         Console.Clear();
-                                        Console.WriteLine($"Goal\n" +
+                                        Console.WriteLine($"Gold\n" +
                                             $"Current value per unit:     {goldPrice}\n" +
-                                            $"Your current units of Coal: {inventory.ElementAt(1)}\n");
+                                            $"Your current units of Gold: {inventory.ElementAt(1)}\n");
                                         Console.Write("How many units would you like to sell? (Enter 00 to cancel): ");
                                         int goldSellUnits = int.Parse(Console.ReadLine());
                                         if (goldSellUnits <= inventory.ElementAt(1) && goldSellUnits > 0)

@@ -4,18 +4,11 @@ using System.Text;
 
 namespace Project
 {
-    class Planet
+    public class Planet
     {
-
-
-
-
-
-
-       
-
-
-
-
+        public Leader Leader;
+        public MechanicShop Mechanic;
+        public TradeShop Shop;
+        public string Name;
     }
 }

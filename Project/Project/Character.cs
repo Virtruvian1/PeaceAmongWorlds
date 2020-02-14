@@ -10,29 +10,16 @@ namespace Project
         public int age;
         public int money;
         public string spaceship;
-        bool art1;
-        bool art2;
-        bool art3;
-        bool art4;
-        bool mp1;
-        bool mp2;
-        bool mp3;
-        bool mp4;
-
+        public List<bool> artifact;
+        public List<bool> mapPieces;
         public Character()
         {
             this.name = "Rick";
             this.age = 18;
             this.money = 200;
             this.spaceship = "Alpha";
-            this.art1 = false;
-            this.art2 = false;
-            this.art3 = false;
-            this.art4 = false;
-            this.mp1 = false;
-            this.mp2 = false;
-            this.mp3 = false;
-            this.mp4 = false;
+            this.artifact = new List<bool>() { false, false, false, false, false}; 
+            this.mapPieces = new List<bool>() { true, false, false, false, false}; 
         }
 
         
