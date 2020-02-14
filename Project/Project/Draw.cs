@@ -7,7 +7,10 @@ namespace PeaceAmongWorlds
 	// Version 1.0
 	public class Draw
 	{
-
+		public int yMin;
+		public int yMax;
+		public int xMin;
+		public int xMax;
 
 		public Draw()
 		{
@@ -64,10 +67,13 @@ namespace PeaceAmongWorlds
 
 		public void DrawStatusBar()
 		{
+			var Movement = new Movement();
 			HealthBar();
 			ControlList();
-			DisplayCurrentPostion();
+			
+			DisplayPostion();
 			BottomOfMenu();
+			DisplayAge();
 
 			void HealthBar()
 			{
@@ -96,7 +102,6 @@ namespace PeaceAmongWorlds
 				CursorTo(2, 0);
 				Console.Write($"Health : {realCurrentHealth} / {realTotalHealth}");
 			}
-
 			void ControlList()
 			{
 				// Menu Divider
@@ -131,18 +136,23 @@ namespace PeaceAmongWorlds
 				CursorTo(75, 2);
 				Console.Write("C : Credits");
 			}
-
-			void DisplayCurrentPostion()
+			void DisplayPostion()
 			{
+				
 				CursorTo(97, 0);
 				Console.ForegroundColor = ConsoleColor.Green;
-				Console.Write("Current Postion ( X, Y )");
+				Console.Write($"Current Postion ( {.currentX}, {Movement.currentY} )");
 				CursorTo(97, 1);
 				Console.ForegroundColor = ConsoleColor.DarkYellow;
-				Console.Write("Target Postion  ( X, Y )");
+				Console.Write($"Target Postion  ( {Movement.targetX}, {Movement.targetY} )");
 				Console.ResetColor();
 			}
-
+			void DisplayAge()
+			{
+				var Movement = new Movement();
+				int age = Movement.ageCounter;
+				Console.Write($"{age}");
+			}
 			void BottomOfMenu()
 			{
 				CursorTo(0, 3);
@@ -152,6 +162,65 @@ namespace PeaceAmongWorlds
 				Console.ResetColor();
 			}
 		}
+		
+
+		public void CurrentPosition(int currentX, int currentY, int ship)
+		{
+			CursorTo(currentX, currentY);
+			switch(ship)
+			{
+				case 1:
+					Console.BackgroundColor = ConsoleColor.Green;
+					Console.ForegroundColor = ConsoleColor.White;
+					Console.Write("@");
+					Console.ResetColor();
+					break;
+				case 2:
+					Console.BackgroundColor = ConsoleColor.Magenta;
+					Console.ForegroundColor = ConsoleColor.White;
+					Console.Write("#");
+					Console.ResetColor();
+					break;
+				case 3:
+					Console.BackgroundColor = ConsoleColor.DarkRed;
+					Console.ForegroundColor = ConsoleColor.White;
+					Console.Write("$");
+					Console.ResetColor();
+					break;
+				default:
+					break;
+			}		
+		}
+
+		public void TargetPosition(int currentX, int currentY, int targetX, int targetY, int ship)
+		{
+			// Target Limits
+			this.yMin = currentY - (ship + 1); // Up
+			this.yMax = currentY + (ship + 1); // Down
+			this.xMin = currentX - (ship + 1); // Left
+			this.xMax = currentX + (ship + 1); // Right
+			int topLimit;
+			int bottomLiimit;
+			int leftLimit;
+			int rightLimit;
+
+			if (targetX >= xMin && targetX <= xMax && targetY >= yMin && targetY <= yMax)
+			{
+				CursorTo(targetX, targetY);
+				Console.BackgroundColor = ConsoleColor.DarkYellow;
+				Console.ForegroundColor = ConsoleColor.Black;
+				Console.Write("O");
+				Console.ResetColor();
+			}
+			else
+			{
+				CursorTo(97, 2);
+				Console.ForegroundColor = ConsoleColor.Green;
+				Console.Write("Max Distance!");
+				Console.ResetColor();
+			}
+		}
+		
 		
 	
 		public void DrawPlanet(int X1, int X2, int X3, int X4, int Y1, int Y2, int ID)
@@ -219,6 +288,8 @@ namespace PeaceAmongWorlds
 				
 		}
 
+
+
 		public void ToConsole()
 		{
 			Console.Write(" ");
@@ -230,7 +301,16 @@ namespace PeaceAmongWorlds
 			Console.SetCursorPosition(x, y);
 		}
 
-
+		// For Development
+		public void StatusID(int statusID)
+		{
+			int statusx = Console.CursorLeft;
+			int statusy = Console.CursorTop;
+			Console.SetCursorPosition(2, 38);
+			Console.Write($"StatusID: {statusID}");
+			Console.SetCursorPosition(statusx, statusy);
+			Console.Read();
+		}
 	}	
 }
 		

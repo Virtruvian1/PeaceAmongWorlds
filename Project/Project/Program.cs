@@ -9,13 +9,18 @@ namespace PeaceAmongWorlds
             bool runGame = true;
             var Draw = new Draw();
             var Movement = new Movement();
+            Console.CursorVisible = false;
             do
             {
+                Console.Clear();
                 Draw.DrawPlanets();
                 Draw.DrawStatusBar();
+                
                 Movement.MovementHandle();
-                Console.Read();
-            } while (!runGame);
+            } while (runGame);
         }
+
+
+
     }
 }

@@ -7,104 +7,99 @@ namespace PeaceAmongWorlds
 
     class Movement
     {
-        public int PositionX;
-        public int PositionY;
-        public int TargetX;
-        public int TargetY;
-        public int ID;
+        public int currentX;
+        public int currentY;
+        public int targetX;
+        public int targetY;
+        public int ship;
+        public int ageCounter = 0;
+
         public void MovementHandle()
         {
-            this.PositionX = 15;
-            this.PositionY = 25;
-            TargetX = PositionX;
-            TargetY = PositionY;
-            ConsoleKey keyPress = Console.ReadKey(true).Key;
-            switch (keyPress)
-            {
-                case ConsoleKey.UpArrow:
-                    ID = 1;
-                    ArrowHandle(ID);
-                    break;
-                case ConsoleKey.DownArrow:
-                    ID = 2;
-                    ArrowHandle(ID);
-                    break;
-                case ConsoleKey.LeftArrow:
-                    ID = 3;
-                    ArrowHandle(ID);
-                    break;
-                case ConsoleKey.RightArrow:
-                    ID = 4;
-                    ArrowHandle(ID);
-                    break;
-                case ConsoleKey.C:
-                    break;
-                case ConsoleKey.M:
-                    break;
-                case ConsoleKey.S:
-                    break;
-                default:
-                    break;
-            }
+            var Draw = new Draw();
+            InitialHandle();
 
-            void ArrowHandle( int ID)
+
+            void InitialHandle()
             {
-                bool move = true;
+                int counter = ageCounter;
+                if (ageCounter == 0)
+                {
+                    // Default (X, Y) from Earth
+                    this.currentX = 75;
+                    this.currentY = 15;
+                    this.targetX = 75;
+                    this.targetY = 15;
+                    Draw.CurrentPosition(currentX, currentY, 3);
+                }
+                
+                bool waitForKey = true;
                 do
                 {
-                    Console.SetCursorPosition(TargetX, TargetY);
-                    Console.BackgroundColor = ConsoleColor.Black;
-                    Console.Write(" ");
-                    switch (ID)
-                    {
-                        case 1:
-                            --TargetY;
-                            break;
-                        case 2:
-                            ++TargetY;
-                            break;
-                        case 3:
-                            --TargetX;
-                            break;
-                        case 4:
-                            ++TargetX;
-                            break;
-                        default:
-                            break;
-                    }
-                    Console.BackgroundColor = ConsoleColor.DarkYellow;
-                    Console.Write(" ");
-                    Console.ResetColor();
-
+                    Draw.CurrentPosition(currentX, currentY, 3);
                     ConsoleKey keyPress = Console.ReadKey(true).Key;
                     switch (keyPress)
                     {
-                        case ConsoleKey.UpArrow:
-                            ID = 1;
+                        case ConsoleKey.M:
+                            waitForKey = false;
                             continue;
-                        case ConsoleKey.DownArrow:
-                            ID = 2;
+                        case ConsoleKey.S:
+                            waitForKey = false;
                             continue;
-                        case ConsoleKey.LeftArrow:
-                            ID = 3;
-                            continue;
-                        case ConsoleKey.RightArrow:
-                            ID = 4;
+                        case ConsoleKey.C:
+                            waitForKey = false;
                             continue;
                         case ConsoleKey.Enter:
-                            PositionX = TargetX;
-                            PositionY = TargetY;
-                            move = true;
-                            break;
+                            currentX = targetX;
+                            currentY = targetY;
+                            ++counter;
+                            ageCounter = counter;
+                            waitForKey = false;
+                            continue;
+                        case ConsoleKey.UpArrow:
+                            --targetY;
+                            PrevDraw();
+                            continue;
+                        case ConsoleKey.DownArrow:
+                            ++targetY;
+                            PrevDraw();
+                            continue;
+                        case ConsoleKey.LeftArrow:
+                            --targetX;
+                            PrevDraw();
+                            continue;
+                        case ConsoleKey.RightArrow:
+                            PrevDraw();
+                            ++targetX;
+                            continue;
                         default:
                             break;
                     }
 
-
-                    } while (move);
+                } while (waitForKey);
             }
+
         }
 
-        
+        public void PrevDraw()
+        {
+            var Draw = new Draw();
+            Console.Clear();
+            Draw.DrawPlanets();
+            Draw.DrawStatusBar();
+            Draw.CurrentPosition(currentX, currentY, 3);
+            Draw.TargetPosition(currentX, currentY, targetX, targetY, 3);
+        }
+        // For Development
+        public void StatusID(int statusID)
+        {
+            int statusx = Console.CursorLeft;
+            int statusy = Console.CursorTop;
+            Console.SetCursorPosition(2, 38);
+            Console.Write($"StatusID: {statusID}");
+            Console.SetCursorPosition(statusx, statusy);
+            Console.Read();
+        }
+
     }
 }
