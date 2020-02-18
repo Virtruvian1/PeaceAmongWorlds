@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Project"
+    "\\Project",
+    "\\Project\\Project"
   ],
-  "SelectedNode": "\\Project\\Project.sln",
+  "SelectedNode": "\\Project\\Project\\Movement.cs",
   "PreviewInSolutionExplorer": false
 }

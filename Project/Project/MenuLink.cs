@@ -4,23 +4,27 @@ namespace Project
 {
 	public class MenuLink
 	{
+
 		public MenuLink()
 		{
 		}
 
-		public void MenuLink()
+		public void MenuLinks(int currentX, int currentY)
         {
-			var Movement = new Movement();
+			
 			var Draw = new Draw();
-			if (Movement.currentX == Draw.Earth.X1 || 
-				Movement.currentX == Draw.Earth.X2 || 
-				Movement.currentX == Draw.Earth.X3 || 
-				Movement.currentX == Draw.Earth.X4 &&
-				Movement.currentY == Draw.Earth.Y1 ||
-				Movement.currentY == Draw.Earth.Y2 )
+			if (currentX == 75 || 
+				currentX == 76 || 
+				currentX == 77 || 
+				currentX == 78 &&
+				currentY == 15 ||
+				currentY == 16 )
             {
-				Console.Write("Earth --------- Test ");
-            }
+				int ID = 0;
+				Console.Clear();
+				Program p = new Program();
+				p.GameEngine();
+			}
         }
 
 

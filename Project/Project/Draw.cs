@@ -217,22 +217,22 @@ namespace Project
 	
 			switch (ID)
 			{
-				case 1:
+				case 0:
 					Console.BackgroundColor = ConsoleColor.Blue;
 					break;
-				case 2:
+				case 1:
 					Console.BackgroundColor = ConsoleColor.Green;
 					break;
-				case 3:
+				case 2:
 					Console.BackgroundColor = ConsoleColor.Magenta;
 					break;
-				case 4:
+				case 3:
 					Console.BackgroundColor = ConsoleColor.White;
 					break;
-				case 5:
+				case 4:
 					Console.BackgroundColor = ConsoleColor.DarkGreen;
 					break;
-				case 6:
+				case 5:
 					Console.BackgroundColor = ConsoleColor.DarkGray;
 					break;
 				default:

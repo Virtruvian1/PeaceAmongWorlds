@@ -19,8 +19,7 @@ namespace Project
                 Draw.DrawStatusBar();
 
                 Movement.MovementHandle();
-                //Program p = new Program();
-                //p.GameEngine();
+                
 
             } while (runGame);
         }
@@ -186,7 +185,7 @@ namespace Project
 
 
             PlanetMenu(Rick, rickShip, ref mainInventory, currentPlanet, planets, planetMenu, ref currentShip);
-            CombatMenu(Rick, ref mainInventory, currentPlanet, currentEnemy, currentShip, mainEnemy, rickShip, enemyMenu);
+            //CombatMenu(Rick, ref mainInventory, currentPlanet, currentEnemy, currentShip, mainEnemy, rickShip, enemyMenu);
         }
 
         private static bool CombatMenu(Character Rick, ref List<int> mainInventory, int currentPlanet, int currentEnemy, int currentShip, List<Enemy> mainEnemy, List<Spaceship> rickShip, bool enemyMenu)
