@@ -26,7 +26,7 @@ namespace Project
         
 
 
-        public void TradeMenu(ref int characterMoney, ref List<int> inventory)
+        public void TradeMenu(ref int characterMoney, ref List<int> inventory, ref int currentShip)
         {
             int bravoCost = 100;
             int charlieCost = 250;
@@ -90,6 +90,7 @@ namespace Project
                                             // Add spaceshipBravo to character spaceship
 
                                             characterMoney -= bravoCost;
+                                                currentShip = 1;
                                             Console.Clear();
                                             Console.WriteLine("Success! You now own Spaceship Bravo! (Press any key to continue..)");
                                                 Console.ReadKey();
@@ -120,7 +121,8 @@ namespace Project
                                                 // Add spaceshipCharlie to character spaceship
 
                                                 characterMoney -= charlieCost;
-                                                Console.WriteLine("Success! You now own Spaceship Bravo! (Press any key to continue..)");
+                                                currentShip = 2;
+                                                Console.WriteLine("Success! You now own Spaceship Charlie! (Press any key to continue..)");
                                                 Console.ReadKey();
                                                 break;
                                         }

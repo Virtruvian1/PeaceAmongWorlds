@@ -8,31 +8,12 @@ namespace Project
     {
         public string shipName;
         public int speed;
+        public int maxHealth;
         public int health;
-        public int damage;
+        public int lightDamage;
+        public int heavyDamage;
+        public int ult;
         public int cargoSpace;
-
-
-        public Spaceship ()
-        {
-            this.shipName = "Alpha";
-            this.speed = 50;
-            this.health = 100;
-            this.damage = 10;
-            this.cargoSpace = 20;
-        }
-        public Spaceship(string shipName, int speed, int health, int damage, int cargoSpace)
-        {
-            this.shipName = shipName;
-            this.speed = speed;
-            this.health = health;
-            this.damage = damage;
-            this.cargoSpace = cargoSpace;
-                 
-        }
-
-
-
 
 
     }

@@ -45,12 +45,13 @@ namespace Project
 
             if (artifact.ElementAt(currentPlanet) == true)
             {
+                mapPieces[currentPlanet] = true;
                 Console.WriteLine(name);
-                Console.WriteLine(complete + $"(Press any key to continue...)");
+                Console.WriteLine(complete + "(Press any key to continue...)");
                 Console.ReadKey();
                 Console.Clear();
                 
-                mapPieces[currentPlanet] = true;
+                
 
             }
             else

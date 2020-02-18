@@ -14,7 +14,7 @@ namespace Project
             this.repairTime = repairTime;
         }
 
-        public void MechanicMenu(ref int characterMoney, ref int spaceshipHealth)
+        public void MechanicMenu(ref int characterMoney, ref int spaceshipHealth, int maxHealth)
         {
             var mechanicMenu = false;
             do
@@ -39,6 +39,7 @@ namespace Project
 
                                         // change spaceship health
                                         characterMoney -= healPrice;
+                                        spaceshipHealth = maxHealth;
                                         Console.Clear();
                                         Console.WriteLine("Success! Your Spaceship has been repaired! (Press any key to continue...)");
                                         Console.ReadKey();
