@@ -2,9 +2,8 @@
 using System.Linq;
 using System.Collections.Generic;
 
-namespace PeaceAmongWorlds
-{
-
+namespace Project
+{ 
 	public class Draw
 	{
 

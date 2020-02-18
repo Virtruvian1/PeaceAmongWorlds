@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PeaceAmongWorlds
+namespace Project
 {
 
     class Movement
