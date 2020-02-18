@@ -19,40 +19,40 @@ namespace Project
 			Console.Title = "PEACE AMOUNG WORLDS!!!";
 			Console.SetWindowSize(150, 40);
 			Earth("Earth", 75, 76, 77, 78, 15, 16);
-			Hoth("Hoth", 27, 28, 29, 30, 9, 10);
-			LV426("LV426", 100, 101, 102, 103, 19, 20);
-			Naboo("Naboo", 25, 26, 27, 28, 23, 24);
-			Tatooine("Tatooine", 65, 66, 67, 68, 37, 38);
+			LV426("LV426", 27, 28, 29, 30, 9, 10);
+			Tatooine("Tatooine", 100, 101, 102, 103, 19, 20);
+			Klandathu("Klandathu", 25, 26, 27, 28, 23, 24);
+			Lavatory("Lavatory", 65, 66, 67, 68, 37, 38);
 			DeathStar("DeathStar", 130, 131, 132, 133, 5, 6);
 
 			void Earth(string Name, int X1, int X2, int X3, int X4, int Y1, int Y2)
 			{
-				int ID = 1;
-				DrawPlanet(X1, X2, X3, X4, Y1, Y2, ID);
-			}
-			void Hoth(string Name, int X1, int X2, int X3, int X4, int Y1, int Y2)
-			{
-				int ID = 2;
+				int ID = 0;
 				DrawPlanet(X1, X2, X3, X4, Y1, Y2, ID);
 			}
 			void LV426(string Name, int X1, int X2, int X3, int X4, int Y1, int Y2)
 			{
-				int ID = 3;
-				DrawPlanet(X1, X2, X3, X4, Y1, Y2, ID);
-			}
-			void Naboo(string Name, int X1, int X2, int X3, int X4, int Y1, int Y2)
-			{
-				int ID = 4;
+				int ID = 1;
 				DrawPlanet(X1, X2, X3, X4, Y1, Y2, ID);
 			}
 			void Tatooine(string Name, int X1, int X2, int X3, int X4, int Y1, int Y2)
 			{
-				int ID = 5;
+				int ID = 2;
+				DrawPlanet(X1, X2, X3, X4, Y1, Y2, ID);
+			}
+			void Klandathu(string Name, int X1, int X2, int X3, int X4, int Y1, int Y2)
+			{
+				int ID = 3;
+				DrawPlanet(X1, X2, X3, X4, Y1, Y2, ID);
+			}
+			void Lavatory(string Name, int X1, int X2, int X3, int X4, int Y1, int Y2)
+			{
+				int ID = 4;
 				DrawPlanet(X1, X2, X3, X4, Y1, Y2, ID);
 			}
 			void DeathStar(string Name, int X1, int X2, int X3, int X4, int Y1, int Y2)
 			{
-				int ID = 6;
+				int ID = 5;
 				DrawPlanet(X1, X2, X3, X4, Y1, Y2, ID);
 			}
 		}

@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Documents\\MSSA\\C#\\PeaceAmongWorlds\\PeaceAmongWorlds-\\PeaceAmongWorlds-\\Project\\Project\\Project.csproj",
+      "projectUniqueName": "D:\\Documents\\MSSA\\C#\\PeaceAmongWorlds\\PeaceAmongWorlds-\\Project\\Project\\Project.csproj",
       "projectName": "Project",
-      "projectPath": "D:\\Documents\\MSSA\\C#\\PeaceAmongWorlds\\PeaceAmongWorlds-\\PeaceAmongWorlds-\\Project\\Project\\Project.csproj",
+      "projectPath": "D:\\Documents\\MSSA\\C#\\PeaceAmongWorlds\\PeaceAmongWorlds-\\Project\\Project\\Project.csproj",
       "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
-      "outputPath": "D:\\Documents\\MSSA\\C#\\PeaceAmongWorlds\\PeaceAmongWorlds-\\PeaceAmongWorlds-\\Project\\Project\\obj\\",
+      "outputPath": "D:\\Documents\\MSSA\\C#\\PeaceAmongWorlds\\PeaceAmongWorlds-\\Project\\Project\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
