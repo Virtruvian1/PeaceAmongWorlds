@@ -315,9 +315,9 @@ namespace Project
                                                     }
                                                     else
                                                     {
-
-                                                        Console.Clear();
-                                                        Console.WriteLine($"Charging Failed! You were attacked while charging your ultimate!\nUltimate Charge: {ultimate} out of 5. (Press any key to continue...)");
+                                                        rickShip[currentShip].health -= 20;
+                                                        Console.Clear();              
+                                                        Console.WriteLine($"Charging Failed! You were attacked while charging your ultimate!\nYou took 20 damage!\nUltimate Charge: {ultimate} out of 5. (Press any key to continue...)");
                                                         Console.ReadKey();
                                                         turn++;
                                                         break;
@@ -377,7 +377,7 @@ namespace Project
                                         {
                                             case ConsoleKey.D1:
                                                 {
-                                                    if (proba <= 70)
+                                                    if (proba <= 80)
                                                     {
                                                         rickShip[currentShip].health -= mainEnemy[currentEnemy].enemyDamage;
                                                         Console.Clear();
