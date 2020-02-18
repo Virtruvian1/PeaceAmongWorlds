@@ -12,52 +12,49 @@ namespace PeaceAmongWorlds
 		{
 		}
 
+
+		
+
 		public void DrawPlanets()
 		{
 			Console.Title = "PEACE AMOUNG WORLDS!!!";
 			Console.SetWindowSize(150, 40);
-			Earth();
-			Hoth();
-			LV426();
-			Naboo();
-			Tatooine();
-			DeathStar();
+			Earth("Earth", 75, 76, 77, 78, 15, 16);
+			Hoth("Hoth", 27, 28, 29, 30, 9, 10);
+			LV426("LV426", 100, 101, 102, 103, 19, 20);
+			Naboo("Naboo", 25, 26, 27, 28, 23, 24);
+			Tatooine("Tatooine", 65, 66, 67, 68, 37, 38);
+			DeathStar("DeathStar", 130, 131, 132, 133, 5, 6);
 
-			void Earth()
+			void Earth(string Name, int X1, int X2, int X3, int X4, int Y1, int Y2)
 			{
 				int ID = 1;
-				var Planets = new Planets("Earth", 75, 76, 77, 78, 15, 16);
-				DrawPlanet(Planets.X1, Planets.X2, Planets.X3, Planets.X4, Planets.Y1, Planets.Y2, ID);
+				DrawPlanet(X1, X2, X3, X4, Y1, Y2, ID);
 			}
-			void Hoth()
+			void Hoth(string Name, int X1, int X2, int X3, int X4, int Y1, int Y2)
 			{
 				int ID = 2;
-				var Planets = new Planets("Hoth", 27, 28, 29, 30, 9, 10);
-				DrawPlanet(Planets.X1, Planets.X2, Planets.X3, Planets.X4, Planets.Y1, Planets.Y2, ID);
+				DrawPlanet(X1, X2, X3, X4, Y1, Y2, ID);
 			}
-			void LV426()
+			void LV426(string Name, int X1, int X2, int X3, int X4, int Y1, int Y2)
 			{
 				int ID = 3;
-				var Planets = new Planets("LV426", 100, 101, 102, 103, 19, 20);
-				DrawPlanet(Planets.X1, Planets.X2, Planets.X3, Planets.X4, Planets.Y1, Planets.Y2, ID);
+				DrawPlanet(X1, X2, X3, X4, Y1, Y2, ID);
 			}
-			void Naboo()
+			void Naboo(string Name, int X1, int X2, int X3, int X4, int Y1, int Y2)
 			{
 				int ID = 4;
-				var Planets = new Planets("Naboo", 25, 26, 27, 28, 23, 24);
-				DrawPlanet(Planets.X1, Planets.X2, Planets.X3, Planets.X4, Planets.Y1, Planets.Y2, ID);
+				DrawPlanet(X1, X2, X3, X4, Y1, Y2, ID);
 			}
-			void Tatooine()
+			void Tatooine(string Name, int X1, int X2, int X3, int X4, int Y1, int Y2)
 			{
 				int ID = 5;
-				var Planets = new Planets("Tatooine", 65, 66, 67, 68, 37, 38);
-				DrawPlanet(Planets.X1, Planets.X2, Planets.X3, Planets.X4, Planets.Y1, Planets.Y2, ID);
+				DrawPlanet(X1, X2, X3, X4, Y1, Y2, ID);
 			}
-			void DeathStar()
+			void DeathStar(string Name, int X1, int X2, int X3, int X4, int Y1, int Y2)
 			{
 				int ID = 6;
-				var Planets = new Planets("DeathStar", 130, 131, 132, 133, 5, 6);
-				DrawPlanet(Planets.X1, Planets.X2, Planets.X3, Planets.X4, Planets.Y1, Planets.Y2, ID);
+				DrawPlanet(X1, X2, X3, X4, Y1, Y2, ID);
 			}
 		}
 
