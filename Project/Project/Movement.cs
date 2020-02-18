@@ -75,6 +75,8 @@ namespace Project
                             currentX = targetX;
                             currentY = targetY;
                             ++ageCounter;
+                            var MenuLink = new MenuLink();
+                            MenuLink();
                             waitForKey = false;
                             continue;
                         case ConsoleKey.UpArrow:

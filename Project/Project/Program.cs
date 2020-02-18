@@ -19,8 +19,8 @@ namespace Project
                 Draw.DrawStatusBar();
 
                 Movement.MovementHandle();
-                Program p = new Program();
-                p.GameEngine();
+                //Program p = new Program();
+                //p.GameEngine();
 
             } while (runGame);
         }
