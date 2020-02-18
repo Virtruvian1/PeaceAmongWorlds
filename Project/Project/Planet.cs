@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PeaceAmongWorlds
 {
-    // Version 1.0
+
     class Planets
     {
         public string Name;
