@@ -16,11 +16,14 @@ namespace Project
         {
             this.name = "Rick";
             this.age = 18;
-            this.money = 200;
+            this.money = 1000;
             this.spaceship = "Alpha";
             this.artifact = new List<bool>() { false, false, false, false, false };
-            this.mapPieces = new List<bool>() { true, false, false, false, false };
+            this.mapPieces = new List<bool>() { true, true, true    , true  , true };
         }
+
+
+
 
 
 
