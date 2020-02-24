@@ -14,14 +14,6 @@ namespace Project
 
         public Leader()
         {
-            this.name = "King Keanu";
-            this.greeting = "----------\nGreetings Rick.There are strong dark forces at work in the universe.\n" +
-                "My sources say they are building a large battleship to take over the galaxy.\n" +
-                "A map to their battleship was broken into 4 pieces and scattered across 4 planets.\n" +
-                "Find these pieces, Find the battleship and destroy it!\n\n" +
-                "This is your home, you can always return here to Heal up.\nGOOD LUCK!'\n";
-            this.mission = false;
-            this.complete = "'Stay away from my Dog...";
 
         }
 
@@ -36,8 +28,7 @@ namespace Project
 
         }
 
-
-
+        
 
 
         public void LeaderMenu(ref bool mission, ref List<bool> artifact, ref List<bool> mapPieces, int currentPlanet)
@@ -46,6 +37,12 @@ namespace Project
             if (artifact.ElementAt(currentPlanet) == true)
             {
                 mapPieces[currentPlanet] = true;
+
+                //MenuLink.MenuHealthBar();
+                //MenuLink.BottomOfMenu();
+                //MenuLink.RickInventory();
+                //MenuLink.CursorTo(0, 6);
+
                 Console.WriteLine(name);
                 Console.WriteLine(complete + "(Press any key to continue...)");
                 Console.ReadKey();
@@ -56,6 +53,10 @@ namespace Project
             }
             else
             {
+                //MenuLink.MenuHealthBar();
+                //MenuLink.BottomOfMenu();
+                //MenuLink.RickInventory();
+                //MenuLink.CursorTo(0, 6);
                 Console.WriteLine(name);
                 Console.WriteLine(greeting);
                 Console.WriteLine("Would you like to accept this mission?:        1. Yes\n" +
