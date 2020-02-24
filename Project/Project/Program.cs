@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -16,7 +16,6 @@ namespace Project
         public void GameEngine()
         {
             var Animation = new Animation();
-            var Menu = new MenuFrames();
             MenuLink MenuLink = new MenuLink();
             bool runGame = true;
             var Draw = new Draw();
@@ -24,8 +23,8 @@ namespace Project
             Console.CursorVisible = false;
             int age = 0;
 
-            Console.SetWindowSize(150, 40);
-            Animation.Animate("D:\\Documents\\MSSA\\C#\\PeaceAmongWorlds\\menu.txt");
+            Console.SetWindowSize(140, 50);
+            Animation.Animate("..\\..\\..\\..\\.\\..\\docs\\Animations\\Menu\\menu.txt");
             Console.ReadKey();
             do
             {
@@ -44,8 +43,8 @@ namespace Project
             Console.Clear();
             Console.WriteLine("You are Dead.\n");
             
-            Animation.Animate("D:\\Documents\\MSSA\\C#\\PeaceAmongWorlds\\shockedmorty.txt");
-
+            Animation.Animate("..\\..\\..\\..\\..\\docs\\Animations\\ShockedMorty\\Shocked Morty.txt");
+            
             Console.ReadKey();
 
         }
