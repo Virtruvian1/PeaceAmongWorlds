@@ -13,9 +13,10 @@ namespace Project
 
 
 		
-
-		public void DrawPlanets()
+		
+		public void DrawPlanets(MenuLink menuLink)
 		{
+			
 			Console.Title = "PEACE AMOUNG WORLDS!!!";
 			Console.SetWindowSize(150, 40);
 			Earth("Earth", 75, 76, 77, 78, 15, 16);
@@ -24,6 +25,10 @@ namespace Project
 			Klandathu("Klandathu", 25, 26, 27, 28, 23, 24);
 			Lavatory("Lavatory", 65, 66, 67, 68, 37, 38);
 			DeathStar("DeathStar", 130, 131, 132, 133, 5, 6);
+			LV223("LV223", 27, 28, 29, 30, 15, 16);
+			Hoth("Hoth", 100, 101, 102, 103, 24, 25);
+			PlanetP("Planet P", 33, 34, 35, 36, 30, 31);
+			Waititi("Waititi", 80, 81, 82, 83, 37, 38);
 
 			void Earth(string Name, int X1, int X2, int X3, int X4, int Y1, int Y2)
 			{
@@ -52,12 +57,53 @@ namespace Project
 			}
 			void DeathStar(string Name, int X1, int X2, int X3, int X4, int Y1, int Y2)
 			{
-				int ID = 5;
-				DrawPlanet(X1, X2, X3, X4, Y1, Y2, ID);
+				var result = menuLink.Rick.mapPieces.All(v => v);
+				if (result)
+				{
+					int ID = 5;
+					DrawPlanet(X1, X2, X3, X4, Y1, Y2, ID);
+				}
+			}
+			// Main Enemy Planets
+			void LV223(string Name, int X1, int X2, int X3, int X4, int Y1, int Y2)
+			{
+				if (menuLink.planets[1].Leader.mission == true && menuLink.Rick.artifact[1] == false)
+				{
+					int ID = 5;
+					DrawPlanet(X1, X2, X3, X4, Y1, Y2, ID);
+				};
+
+			}
+			void Hoth(string Name, int X1, int X2, int X3, int X4, int Y1, int Y2)
+			{
+				if (menuLink.planets[2].Leader.mission == true && menuLink.Rick.artifact[2] == false)
+				{
+					int ID = 5;
+					DrawPlanet(X1, X2, X3, X4, Y1, Y2, ID);
+				};
+
+			}
+			void PlanetP(string Name, int X1, int X2, int X3, int X4, int Y1, int Y2)
+			{
+				if (menuLink.planets[3].Leader.mission == true && menuLink.Rick.artifact[3] == false)
+				{
+					int ID = 5;
+					DrawPlanet(X1, X2, X3, X4, Y1, Y2, ID);
+				};
+
+			}
+			void Waititi(string Name, int X1, int X2, int X3, int X4, int Y1, int Y2)
+			{
+				if (menuLink.planets[4].Leader.mission == true && menuLink.Rick.artifact[4] == false)
+				{
+					int ID = 5;
+					DrawPlanet(X1, X2, X3, X4, Y1, Y2, ID);
+				};
+
 			}
 		}
 
-		public void DrawStatusBar()
+		public void DrawStatusBar(MenuLink menuLink)
 		{
 
 			HealthBar();
@@ -68,8 +114,8 @@ namespace Project
 			void HealthBar()
 			{
 				// Initilize variables
-				int realCurrentHealth = 65; // <- Pull Variable from Ship Status
-				int realTotalHealth = 100;
+				int realCurrentHealth = menuLink.spaceships[menuLink.currentShip].health; // <- Pull Variable from Ship Status
+				int realTotalHealth = menuLink.spaceships[menuLink.currentShip].maxHealth;
 				int statusCurrentHealth;
 				int statusTotalHealth = 20;
 				// Set Position
@@ -91,6 +137,8 @@ namespace Project
 				// Display Health in Text
 				CursorTo(2, 0);
 				Console.Write($"Health : {realCurrentHealth} / {realTotalHealth}");
+				CursorTo(2, 2);
+				Console.WriteLine($"Money: {menuLink.Rick.money}\n  Current Ship: {menuLink.spaceships[menuLink.currentShip].shipName}");
 			}
 			void ControlList()
 			{
@@ -102,17 +150,21 @@ namespace Project
 				Console.Write("|");
 				CursorTo(30, 2);
 				Console.Write("|");
+				CursorTo(30, 3);
+				Console.Write("|");
 				CursorTo(95, 0);
 				Console.Write("|");
 				CursorTo(95, 1);
 				Console.Write("|");
 				CursorTo(95, 2);
 				Console.Write("|");
+				CursorTo(95, 3);
+				Console.Write("|");
 				Console.ResetColor();
 				// Control List Title
 				CursorTo(32, 0);
 				Console.Write("Controls: ");
-				// Control List
+				//Control List
 				CursorTo(45, 0);
 				Console.Write("Arrow Keys: Move Target");
 				CursorTo(45, 1);
@@ -128,7 +180,7 @@ namespace Project
 			}
 			void BottomOfMenu()
 			{
-				CursorTo(0, 3);
+				CursorTo(0, 4);
 				Console.ForegroundColor = ConsoleColor.Cyan;
 				string bar = new string('R', 140);
 				Console.Write($"{bar}" + "iicckk!!!!");
@@ -142,19 +194,19 @@ namespace Project
 			CursorTo(currentX, currentY);
 			switch(ship)
 			{
-				case 1:
-					Console.BackgroundColor = ConsoleColor.Green;
+				case 0:
+					Console.BackgroundColor = ConsoleColor.DarkGreen;
 					Console.ForegroundColor = ConsoleColor.White;
 					Console.Write("@");
 					Console.ResetColor();
 					break;
-				case 2:
-					Console.BackgroundColor = ConsoleColor.Magenta;
+				case 1:
+					Console.BackgroundColor = ConsoleColor.DarkMagenta;
 					Console.ForegroundColor = ConsoleColor.White;
 					Console.Write("#");
 					Console.ResetColor();
 					break;
-				case 3:
+				case 2:
 					Console.BackgroundColor = ConsoleColor.DarkRed;
 					Console.ForegroundColor = ConsoleColor.White;
 					Console.Write("$");
@@ -217,22 +269,22 @@ namespace Project
 	
 			switch (ID)
 			{
-				case 1:
+				case 0:
 					Console.BackgroundColor = ConsoleColor.Blue;
 					break;
-				case 2:
+				case 1:
 					Console.BackgroundColor = ConsoleColor.Green;
 					break;
-				case 3:
+				case 2:
 					Console.BackgroundColor = ConsoleColor.Magenta;
 					break;
-				case 4:
+				case 3:
 					Console.BackgroundColor = ConsoleColor.White;
 					break;
-				case 5:
+				case 4:
 					Console.BackgroundColor = ConsoleColor.DarkGreen;
 					break;
-				case 6:
+				case 5:
 					Console.BackgroundColor = ConsoleColor.DarkGray;
 					break;
 				default:
