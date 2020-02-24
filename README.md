@@ -10,4 +10,14 @@ This is a move based game, meaning you have a limited amount of moves per game. 
 
 You can visit planets and buy health.
 
+## Controls
+> Right Arrow : Move the target to the right
+> Left Arrow : Move the target to the left
+> Up Arrow : Move the target up; iterate through menus
+> Down Arrow : Move the target down; iterate through menus
+> M : Open submenu
+> C : Open creadit menu (Not Avalible Yet)
+> Ctrl+C : Quit the game without saving
+> S : Save the game (Not Avalible Yet)
+
 Class Project Game
