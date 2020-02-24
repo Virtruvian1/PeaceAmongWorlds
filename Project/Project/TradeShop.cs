@@ -57,19 +57,23 @@ namespace Project
 
                                 Console.Write("Spaceship Shop Collection\n\n");
 
-                                Console.WriteLine("1. Spaceship Bravo,   Cost:        100\n" +
-                                    "                      Speed:       75\n" +
-                                    "                      Health:      150\n" +
-                                    "                      Damage:      15\n" +
-                                    "                      Cargo Space: 30\n\n" +
+                                Console.WriteLine("1. Spaceship Bravo,   Cost:              100\n" +
+                                    "                      Speed:             4\n" +
+                                    "                      Health:            150\n" +
+                                    "                      Light Damage:      12\n" +
+                                    "                      Heavy Damage:      24\n" +
+                                    "                      Ult Damage:        90\n" +
+                                    "                      Cargo Space:       30\n\n" +
                                     "      ^ \n" +
                                     "    { A } \n" +
                                     "   <|||||>\n");
-                                Console.WriteLine("2. Spaceship Charlie, Cost:        250\n" +
-                                    "                      Speed:       100\n" +
-                                    "                      Health:      200\n" +
-                                    "                      Damage:      20\n" +
-                                    "                      Cargo Space: 40\n\n" +
+                                Console.WriteLine("2. Spaceship Charlie, Cost:              250\n" +
+                                    "                      Speed:             6\n" +
+                                    "                      Health:            200\n" +
+                                    "                      Damage:            18\n" +
+                                    "                      Heavy Damage:      30\n" +
+                                    "                      Ult Damage:        120\n" +
+                                    "                      Cargo Space:       40\n\n" +
                                     "      ^ \n" +
                                     "    { B } \n" +
                                     "   (( X ))\n" +
@@ -85,7 +89,7 @@ namespace Project
 
                                     case ConsoleKey.D1:
                                         {
-                                            if (characterMoney >= bravoCost)
+                                            if (characterMoney >= bravoCost && currentShip != 1)
                                             {
                                                 // Add spaceshipBravo to character spaceship
 
@@ -102,6 +106,16 @@ namespace Project
 
 
                                             }
+                                            else if (currentShip == 1)
+                                            {
+                                                Console.Clear();
+                                                Console.Write("You already own this Spaceship! (Press any key to return...) ");
+                                                Console.ReadKey();
+                                                Console.Clear();
+
+                                                buyDone = false;
+                                                break;
+                                            }
                                             else
                                             {
                                                 Console.Clear();
@@ -116,20 +130,31 @@ namespace Project
                                         }
                                     case ConsoleKey.D2:
                                         {
-                                            if (characterMoney >= charlieCost)
+                                            if (characterMoney >= charlieCost && currentShip != 2)
                                             {
                                                 // Add spaceshipCharlie to character spaceship
 
                                                 characterMoney -= charlieCost;
                                                 currentShip = 2;
+                                                Console.Clear();
                                                 Console.WriteLine("Success! You now own Spaceship Charlie! (Press any key to continue..)");
                                                 Console.ReadKey();
+                                                break;
+                                            }
+                                            else if (currentShip == 2)
+                                            {
+                                                Console.Clear();
+                                                Console.Write("You already own this Spaceship! (Press any key to return...) ");
+                                                Console.ReadKey();
+                                                Console.Clear();
+
+                                                buyDone = false;
                                                 break;
                                             }
                                             else
                                             {
                                                 Console.Clear();
-                                                Console.Write("Insuficient Funds, Press any key to return: ");
+                                                Console.Write("Insuficient Funds. (Press any key to return...) ");
                                                 Console.ReadKey();
                                                 Console.Clear();
 
