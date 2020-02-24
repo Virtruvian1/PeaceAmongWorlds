@@ -1,45 +1,52 @@
 //	Add to the top of the .cs file to allow file handle
-
+using System;
 using System.IO;
-
-String line;
-    try 
+namespace Project
+{
+    class Animations
     {
+        public string Path;
 
-//Pass the file path and file name to the StreamReader constructor
-
-        StreamReader sr = new StreamReader("C:\\Sample.txt");
-
-//Read the first line of text
-        
-        line = sr.ReadLine();
-
-//Continue to read until you reach end of file
-
-        while (line != null) 
+        void Animations()
         {
-
-//write the line to console window
-
-            Console.WriteLine(line);
-
-//Read the next line
-
-            line = sr.ReadLine();
         }
 
-//close the file
+        void Animations(string Path)
+        {
+            this.Path = Path;
+            String line;
+            try 
+            {
+                //Pass the file path and file name to the StreamReader constructor
+                StreamReader sr = new StreamReader($"{Path}");
 
-        sr.Close();
-        Console.ReadLine();
-    }
-    catch(Exception e)
-    {
-        Console.WriteLine("Exception: " + e.Message);
-    }
-    finally 
-    {
-        Console.WriteLine("Executing finally block.");
-    }
+                //Read the first line of text
+                line = sr.ReadLine();
 
-Source: https://support.microsoft.com/en-us/help/816149/how-to-read-from-and-write-to-a-text-file-by-using-visual-c 
+                //Continue to read until you reach end of file
+
+            while (line != null) 
+            {
+                //write the line to console window
+                Console.WriteLine(line);
+
+                //Read the next line
+                line = sr.ReadLine();
+            }
+
+            //close the file
+            sr.Close();
+            Console.ReadLine();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Exception: " + e.Message);
+            }
+            finally 
+            {
+                Console.WriteLine("Executing finally block.");
+            }
+        }
+//Source: https://support.microsoft.com/en-us/help/816149/how-to-read-from-and-write-to-a-text-file-by-using-visual-c 
+    }
+}
