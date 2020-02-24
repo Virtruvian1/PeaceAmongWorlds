@@ -7,6 +7,8 @@ namespace Project
 
     class Movement
     {
+        MenuLink MenuLink;
+
         public int currentX;
         public int currentY;
         public int targetX;
@@ -23,46 +25,51 @@ namespace Project
         public int yUpperLimit = 39;
 
         public int ship = 6;
-        public int ageCounter;
+        public int ageCounter = 18;
 
         public int cursorPositionx;
         public int cursorPositiony;
 
+        public Movement(MenuLink menuLink)
+        {
+            MenuLink = menuLink;
+        }
 
-        public void MovementHandle()
+        public int MovementHandle()
         {
             var Draw = new Draw();
-            InitialHandle();
+            int age = InitialHandle();
 
 
-            void InitialHandle()
+            int InitialHandle()
             {
 
-                if (ageCounter == 0)
+                if (ageCounter == 18)
                 {
                     // Default (X, Y) from Earth
                     this.currentX = 75;
                     this.currentY = 15;
                     this.targetX = 75;
                     this.targetY = 15;
-                    Draw.CurrentPosition(currentX, currentY, 3);
+                    Draw.CurrentPosition(currentX, currentY, MenuLink.currentShip);
                 }
                 
                 bool waitForKey = true;
-                this.yMin = currentY - (ship + 1); // Up
-                this.yMax = currentY + (ship + 1); // Down
-                this.xMin = currentX - (ship + 1); // Left
-                this.xMax = currentX + (ship + 1); // Right
-                
+                this.yMin = currentY - (MenuLink.spaceships[MenuLink.currentShip].speed); // Up
+                this.yMax = currentY + (MenuLink.spaceships[MenuLink.currentShip].speed); // Down
+                this.xMin = currentX - (MenuLink.spaceships[MenuLink.currentShip].speed + 1); // Left
+                this.xMax = currentX + (MenuLink.spaceships[MenuLink.currentShip].speed + 1); // Right
+                    
                 do
                 {
                     DisplayPostion();
                     DisplayCounter();
-                    Draw.CurrentPosition(currentX, currentY, 3);
+                    Draw.CurrentPosition(currentX, currentY, MenuLink.currentShip);
                     ConsoleKey keyPress = Console.ReadKey(true).Key;
                     switch (keyPress)
                     {
                         case ConsoleKey.M:
+                            MenuLink.InventoryMenu();
                             waitForKey = false;
                             continue;
                         case ConsoleKey.S:
@@ -75,6 +82,8 @@ namespace Project
                             currentX = targetX;
                             currentY = targetY;
                             ++ageCounter;
+                            int age = MenuLink.MenuLinks(currentX, currentY);
+                            ageCounter += age;
                             waitForKey = false;
                             continue;
                         case ConsoleKey.UpArrow:
@@ -138,7 +147,12 @@ namespace Project
                     }
 
                 } while (waitForKey);
+
+
+                return ageCounter;
             }
+
+            return age;
 
         }
 
@@ -146,10 +160,10 @@ namespace Project
         {
             var Draw = new Draw();
             Console.Clear();
-            Draw.DrawPlanets();
-            Draw.DrawStatusBar();
-            Draw.CurrentPosition(currentX, currentY, ship);
-            Draw.TargetPosition(currentX, currentY, targetX, targetY, ship);
+            Draw.DrawPlanets(MenuLink);
+            Draw.DrawStatusBar(MenuLink);
+            Draw.CurrentPosition(currentX, currentY, MenuLink.spaceships[MenuLink.currentShip].speed);
+            Draw.TargetPosition(currentX, currentY, targetX, targetY, MenuLink.spaceships[MenuLink.currentShip].speed);
         }
 
         public void DisplayCounter()
