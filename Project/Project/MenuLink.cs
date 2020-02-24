@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Threading;
@@ -648,10 +648,10 @@ namespace Project
             {
 
 
-                Animation.Animate("D:\\Documents\\MSSA\\C#\\PeaceAmongWorlds\\tina1.txt");
+                Animation.Animate("..\\..\\..\\..\\.\\..\\docs\\Animations\\TwerkingTina\\Frame1.txt");
                 Thread.Sleep(30);
                 Console.Clear();
-                Animation.Animate("D:\\Documents\\MSSA\\C#\\PeaceAmongWorlds\\tina2.txt");
+                Animation.Animate("..\\..\\..\\..\\.\\..\\docs\\Animations\\TwerkingTina\\Frame2.txt");
                 Thread.Sleep(30);
                 Console.Clear();
 
@@ -869,24 +869,24 @@ namespace Project
             var Animation = new Animation();
             int time = 800;
 
-            Animation.Animate("D:\\Documents\\MSSA\\C#\\PeaceAmongWorlds\\toxicrick.txt");
+            Animation.Animate("..\\..\\..\\..\\.\\..\\docs\\Animations\\ToxicRick\\Toxic Rick.txt");
             Thread.Sleep(time);
             Console.Clear();
-            Animation.Animate("D:\\Documents\\MSSA\\C#\\PeaceAmongWorlds\\deathstar.txt");
+            Animation.Animate("..\\..\\..\\..\\.\\..\\docs\\Animations\\DeathStar\\DeathStar.txt");
             Thread.Sleep(time);
             Console.Clear();
-            Animation.Animate("D:\\Documents\\MSSA\\C#\\PeaceAmongWorlds\\fight.txt");
+            Animation.Animate("..\\..\\..\\..\\.\\..\\docs\\Animations\\FightScene\\FightScene.txt");
             Thread.Sleep(time);
             Console.Clear();
-            Animation.Animate("D:\\Documents\\MSSA\\C#\\PeaceAmongWorlds\\deathstar.txt");
+            Animation.Animate("..\\..\\..\\..\\.\\..\\docs\\Animations\\DeathStar\\DeathStar.txt");
             Thread.Sleep(time);
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
-            Animation.Animate("D:\\Documents\\MSSA\\C#\\PeaceAmongWorlds\\explosion.txt");
+            Animation.Animate("..\\..\\..\\..\\.\\..\\docs\\Animations\\Explosion\\Explosion.txt");
             Thread.Sleep(time);
             Console.Clear();
             Console.ResetColor();
-            Animation.Animate("D:\\Documents\\MSSA\\C#\\PeaceAmongWorlds\\victory.txt");
+            Animation.Animate("..\\..\\..\\..\\.\\..\\docs\\Animations\\Victory\\Victory.txt");
             Thread.Sleep(time);
             Console.Clear();
             Console.WriteLine("You Win!");
