@@ -11,6 +11,7 @@ namespace Project
         public string eLeader;
         public string eGreeting;
         public int enemyHealth;
+        public int enemyMaxHealth;
         public int enemyDamage;
         public int enemySpeed;
         public List<int> enemyLoot;
